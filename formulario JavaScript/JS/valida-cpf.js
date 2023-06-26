@@ -5,7 +5,7 @@ export default function ehUmCPF(campo){
     console.log(validaNumerosRepetidos(cpf))
 }
 
-function validaNumerosRepetidos(cpf){   // funcion para verificar se o CPF passado pelo clinete é valido e não tem nenhum numero esteja se repetindo
+function validaNumerosRepetidos(cpf){   // funcion para verificar se o CPF passado pelo clinete é valido e não tenha nenhum número que esteja se repetindo
     const numerosRepetidos = [
         "00000000000",
         "11111111111",
