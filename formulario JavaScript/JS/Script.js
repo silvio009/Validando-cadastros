@@ -1,8 +1,12 @@
-const campoDoFormulario = document.querySelectorAll("[required]"); // puxar a lista de elementos do HTML 
+import ehUmCPF from "./valida-cpf.js";
+const camposDoFormulario = document.querySelectorAll('[required]') // puxar a lista de elementos do HTML 
 
-campoDoFormulario.forEach((campo)=>{
-   campo.addEventListener("blur", ()=> verificaCampo(campo)) // blur = tirar o foco do input (ex: foi para outro campo do formulario)  --> depois disso a funcion verifica campo fará a verificação! 
+camposDoFormulario.forEach((campo) => {
+    campo.addEventListener("blur", () => verificaCampo(campo)); // blur = tirar o foco do input (ex: foi para outro campo do formulario)  --> depois disso a funcion verifica campo fará a verificação!
 })
-function verificaCampo(campo){
 
+function verificaCampo(campo) {
+    if (campo.name == "cpf" && campo.value.length >= 11) {
+        ehUmCPF(campo);
+    }
 }
