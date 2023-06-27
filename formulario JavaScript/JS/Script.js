@@ -1,6 +1,24 @@
 import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
 const camposDoFormulario = document.querySelectorAll('[required]') // puxar a lista de elementos do HTML 
+ const formulario = document.querySelector("[data-formulario]")
+
+formulario.addEventListener("submit", (e)=> {
+    e.preventDefault();
+
+    const ListaResposta = {
+        "nome": e.target.elements["nome"].value,
+        "email": e.target.elements["email"].value,
+        "rg": e.target.elements["rg"].value,
+        "cpf": e.target.elements["cpf"].value,
+        "aniversario": e.target.elements["aniversario"].value
+    }
+
+    localStorage.SetItem("cadastro", JSON.stringify(ListaResposta))
+
+    window.location.href = './abrir-conta-form-2.html';
+})
+
 
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verificaCampo(campo)); // blur = tirar o foco do input (ex: foi para outro campo do formulario)  --> depois disso a funcion verifica campo fará a verificação!
