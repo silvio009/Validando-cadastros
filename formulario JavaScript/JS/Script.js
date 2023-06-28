@@ -14,9 +14,9 @@ formulario.addEventListener("submit", (e)=> {
         "aniversario": e.target.elements["aniversario"].value
     }
 
-    localStorage.SetItem("cadastro", JSON.stringify(ListaResposta))
+   localStorage.setItem("cadastro", JSON.stringify(ListaResposta));
 
-    window.location.href = './abrir-conta-form-2.html';
+    window.location.href = "./abrir-conta-form-2.html";
 })
 
 
